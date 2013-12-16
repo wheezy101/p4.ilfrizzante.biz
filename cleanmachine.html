@@ -11,37 +11,30 @@
 	<title>Clean Machine</title>
     </head>
     <body>
+	<!-- Five minute countdown timer -->
 	    <div class="wrapper">
             <h1>Clean Machine</h1>
 	
 	<!-- The area where chores are added -->
-	<div id="places">
+	<div class="places">
+		<form name="areas">
 		<h2>Places to Clean<h2>
-			<ul>
-			<input type='radio' class='places' name='place' id='kitchen'>
-			<label for='kitchen'>&nbsp;Kitchen</label><br>
-			<input type='radio' class='places' name='place' id='bathroom'>
-			<label for='bathroom'>&nbsp;Bathroom</label><br>
-			<input type='radio' class='places' name='place' id='hallway'>
-			<label for='hallway'>&nbsp;Hallway</label><br>
-			<input type='radio' class='places' name='place' id='foyer'>
-			<label for='foyer'>&nbsp;Foyer</label><br>
-			<input type='radio' class='places' name='place' id='livingroom'>
-			<label for='livingroom'>&nbsp;Living Room</label><br>
-			<input type='radio' class='places' name='place' id='bedroom'>
-			<label for='bedroom'>&nbsp;Bedroom</label><br>
-			<input type='radio' class='places' name='place' id='familyroom'>
-			<label for='familyroom'>&nbsp;Family Room</label><br>
-			<input type='radio' class='places' name='place' id='study'>
-			<label for='study'>&nbsp;Study</label><br>
-			<input type='radio' class='places' name='place' id='laundryroom'>
-			<label for='laundryroom'>&nbsp;Laundry Room</label><br>
-			<input type='radio' class='places' name='place' id='basement'>
-			<label for='basement'>&nbsp;Basement</label><br>
-			<input type='radio' class='places' name='place' id='attic'>
-			<label for='attic'>&nbsp;Attic</label><br>
-			</ul>
-			
+			<table>
+			<tr><td><input type='radio' name='place' id='kitchen' value='kitchen' onclick=''>  Kitchen</td></tr>
+			<tr><td><input type='radio' name='place' id='bathroom' value='bathroom' onclick=''>  Bathroom</td></tr>
+			<tr><td><input type='radio' name='place' id='hallway' value='hallway' onclick=''>  Hallway</td></tr>
+			<tr><td><input type='radio' name='place' id='foyer' value='foyer' onclick=''>  Foyer</td></tr>
+			<tr><td><input type='radio' name='place' id='livingroom' value='livingroom' onclick=''>  Living Room</td></tr>
+			<tr><td><input type='radio' name='place' id='bedroom' value='bedroom' onclick=''>  Bedroom</td></tr>
+			<tr><td><input type='radio' name='place' id='familyroom' value='familyroom' onclick=''>  Family Room</td></tr>
+			<tr><td><input type='radio' name='place' id='study' value='study' onclick=''>  Study</td></tr>
+			<tr><td><input type='radio' name='place' id='laundryroom' value='laundryroom' onclick=''>  Laundry Room</td></tr>
+			<tr><td><input type='radio' name='place' id='basement' value='basement' onclick=''>  Basement</td></tr>
+			<tr><td><input type='radio' name='place' id='attic' value='attic' onclick=''>  Attic</td></tr>
+			</table>
+			<br>
+			<input type='button' value='Confirm area!' onclick='cleanPlace(this.form)'>
+			</form>
 	</div>
 
             <div class="choreTimer" data-timer="5" >

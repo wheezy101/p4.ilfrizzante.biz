@@ -32,20 +32,23 @@ h3 {
     text-align: center;
 }
 
-ul {
+table, tr, td 
+{
     text-align: justify;
-    font-size: 15px;
+    font-size: 20px;
 }
 
-#places {
+tr {
+    height: 25px;
+}
+
+.places {
     margin-top: 80px;
     float: left;
     margin-left: 10px;
     width: 300px;
     text-align: left;
 }
-
-
 
 .clear {
     clear: both;
