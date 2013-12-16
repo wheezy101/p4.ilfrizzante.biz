@@ -1,0 +1,55 @@
+body {
+    background-color: #666666;
+    font-family: arial;
+}
+
+.wrapper {
+    width: 1000px;
+    margin: 25px auto;
+}
+
+.choreTimer {
+    width: 500px;
+    height: 300px;
+    padding: 0px;
+    float: right;
+    margin-top: 80px;
+    text-align: center;
+    }
+    
+h1 {
+    font-size: 30px;
+    color: pink;
+    text-align: center;
+}
+
+h2 {
+    color: #FFA500;
+    font-size: 20px;
+    text-align: center;
+}
+h3 {
+    text-align: center;
+}
+
+ul {
+    text-align: justify;
+    font-size: 15px;
+}
+
+#places {
+    margin-top: 80px;
+    float: left;
+    margin-left: 10px;
+    width: 300px;
+    text-align: left;
+}
+
+
+
+.clear {
+    clear: both;
+}
+.error {
+    color: #FF0000;
+}
