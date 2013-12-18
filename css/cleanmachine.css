@@ -8,6 +8,10 @@ body {
     margin: 25px auto;
 }
 
+footer {
+    text-align: center;
+}
+
 .choreTimer {
     width: 500px;
     height: 300px;
