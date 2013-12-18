@@ -40,14 +40,18 @@ tr {
 
 .choreTimer {
     width: 500px;
-    height: 300px;
-    float: right;
+    height: 500px;
     text-align: center;
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-top: 50px;
     }
     
 .places {
     width: 300px;
-    text-align: left;
+    text-align: center;
+    margin-left: 250px;
+    margin-right: 250px;
 }
 
 #login {

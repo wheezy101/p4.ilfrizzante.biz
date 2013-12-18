@@ -105,7 +105,7 @@ public function login($error = NULL) {
 
 
 
-    public function cleanmachine() {
+    public function cleanplaces() {
         
             # If user is blank, they're not logged in; redirect them to the login page
     if(!$this->user) {
@@ -115,7 +115,7 @@ public function login($error = NULL) {
     # If they weren't redirected away, continue:
 
     # Setup view
-    $this->template->content = View::instance('v_users_cleanmachine');
+    $this->template->content = View::instance('v_users_cleanplaces');
     $this->template->title   = $this->user->user_name."'s Clean Machine";
 
 
@@ -125,26 +125,56 @@ public function login($error = NULL) {
 
     }
 
-    public function p_cleanmachine() {
+    public function p_cleanplaces() {
 
         # Associate this chore with this user
         $_POST['user_id']  = $this->user->user_id;
 
         # Unix timestamp of when this post was created / modified
         $_POST['started']  = Time::now();
-
-        # Get which chore it was
-        #$_POST('place') = cleanPlace(this.form);
         
         # Insert
-        # Note we didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us
         DB::instance(DB_NAME)->insert('chorehistory', $_POST);
 
-        Router::redirect('/users/cleanmachine');
-        # Quick and dirty feedback
-        #echo "Your completed chore has been recorded. <a href='/users/cleanmachine'>Complete another!</a>";
+        # Go on to the chore timer
+        Router::redirect('/users/cleantimer');
     }
 
+        public function cleantimer() {
+        
+            # If user is blank, they're not logged in; redirect them to the login page
+    if(!$this->user) {
+        Router::redirect('/users/login');
+    }
+
+    # If they weren't redirected away, continue:
+
+    # Setup view
+    $this->template->content = View::instance('v_users_cleantimer');
+    $this->template->title   = $this->user->user_name."'s Clean Machine";
+
+
+
+        # Render template
+        echo $this->template;
+
+    }
+
+        public function cleantimer_p() {
+        # Associate this chore with this user
+        $_POST['user_id']  = $this->user->user_id;
+
+        # Unix timestamp of when this post was created / modified
+        $_POST['completed']  = Time::now();
+        
+        # Do the update
+        DB::instance(DB_NAME)->update("chorehistory", $data, "WHERE user_id = '".$this->user->user_id."'");
+
+        # Go on to the chore timer
+        Router::redirect('/');
+        }        
+
+    
 } # end of the class
 
 
