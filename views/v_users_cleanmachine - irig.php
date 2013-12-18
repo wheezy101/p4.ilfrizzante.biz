@@ -1,8 +1,6 @@
-<div id=wrapper>
-<h1>This is the profile of <?=$user->user_name?></h1>
 
 	<!-- Five minute countdown timer -->
-            <h1>Clean Machine</h1>
+            <h1><?=$user->user_name?>'s Clean Machine</h1>
 
             <div class="choreTimer" data-timer="5" >
 		<h2>5-Minute Timer</h2>
@@ -30,4 +28,3 @@
 			</form>
 
 	    
-        </div>

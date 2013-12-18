@@ -1,8 +1,6 @@
-<div id=wrapper>
-<h1>This is the profile of <?=$user->user_name?></h1>
 
 	<!-- Five minute countdown timer -->
-            <h1>Clean Machine</h1>
+            <h1><?=$user->user_name?>'s Clean Machine</h1>
 
             <div class="choreTimer" data-timer="5" >
 		<h2>5-Minute Timer</h2>
@@ -10,7 +8,8 @@
 	    </div>
 
 	<div class="places">
-		<form name="areas">
+
+                <form name="areas" method='POST' action='/users/p_cleanmachine'>
 		<h2>Places to Clean<h2>
 			<table>
 			<tr><td><input type='radio' name='place' id='kitchen' value='kitchen' onclick=''>  Kitchen</td></tr>
@@ -26,8 +25,7 @@
 			<tr><td><input type='radio' name='place' id='attic' value='attic' onclick=''>  Attic</td></tr>
 			</table>
 			<br>
-			<input type='button' value='Confirm area!' onclick='cleanPlace(this.form)'>
+			<input type='submit' value='Confirm area!'>
 			</form>
 
-	    
         </div>

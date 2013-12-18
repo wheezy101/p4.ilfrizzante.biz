@@ -12,6 +12,7 @@ $(".choreTimer").TimeCircles({count_past_zero: false});
 
 // Javascript for recording user activity with place radio buttons
 
+/*
 function cleanPlace(frm) {
 	var message = "You chose:\n\n"
 	for (i=0; i < frm.place.length; i++)
@@ -21,5 +22,5 @@ function cleanPlace(frm) {
 	}
 alert(message);
 }
-
+*/
 

@@ -8,25 +8,8 @@ body {
     margin: 25px auto;
 }
 
-footer {
+#menu {
     text-align: center;
-}
-
-.choreTimer {
-    width: 500px;
-    height: 300px;
-    padding: 0px;
-    float: right;
-    margin-top: 50px;
-    text-align: center;
-    }
-    
-.places {
-    margin-top: 50px;
-    float: left;
-    margin-left: 10px;
-    width: 300px;
-    text-align: left;
 }
 
 h1 {
@@ -52,6 +35,30 @@ table, tr, td
 
 tr {
     height: 25px;
+}
+
+
+.choreTimer {
+    width: 500px;
+    height: 300px;
+    float: right;
+    text-align: center;
+    }
+    
+.places {
+    width: 300px;
+    text-align: left;
+}
+
+#login {
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.error {
+    text-color: red;
 }
 
 .clear {

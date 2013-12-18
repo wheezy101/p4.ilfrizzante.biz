@@ -103,10 +103,11 @@ public function login($error = NULL) {
     echo 'Welcome to your Clean Machine!';
 }
 
-public function profile() {
 
 
-    # If user is blank, they're not logged in; redirect them to the login page
+    public function cleanmachine() {
+        
+            # If user is blank, they're not logged in; redirect them to the login page
     if(!$this->user) {
         Router::redirect('/users/login');
     }
@@ -114,14 +115,35 @@ public function profile() {
     # If they weren't redirected away, continue:
 
     # Setup view
-    $this->template->content = View::instance('v_users_profile');
-    $this->template->title   = "Profile of".$this->user->user_name;
-
-    # Render template
-    echo $this->template;
-}
+    $this->template->content = View::instance('v_users_cleanmachine');
+    $this->template->title   = $this->user->user_name."'s Clean Machine";
 
 
+
+        # Render template
+        echo $this->template;
+
+    }
+
+    public function p_cleanmachine() {
+
+        # Associate this chore with this user
+        $_POST['user_id']  = $this->user->user_id;
+
+        # Unix timestamp of when this post was created / modified
+        $_POST['started']  = Time::now();
+
+        # Get which chore it was
+        #$_POST('place') = cleanPlace(this.form);
+        
+        # Insert
+        # Note we didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us
+        DB::instance(DB_NAME)->insert('chorehistory', $_POST);
+
+        Router::redirect('/users/cleanmachine');
+        # Quick and dirty feedback
+        #echo "Your completed chore has been recorded. <a href='/users/cleanmachine'>Complete another!</a>";
+    }
 
 } # end of the class
 
