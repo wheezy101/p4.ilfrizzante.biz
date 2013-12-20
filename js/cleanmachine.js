@@ -8,6 +8,7 @@ $(".start").click(function(){
 	setTimeout(function(){alert("Time's up! Onto the next one.")},5000);
 	});
 
+
 $(".choreTimer").TimeCircles({count_past_zero: false});
 	
 
@@ -23,5 +24,11 @@ function cleanPlace(frm) {
 	}
 alert(message);
 }
-*/
+mpt("Please enter your name","Harry Potter");
+	setTimeout(function(){confirm("Press okay!")},5000);
 
+	if (true) {
+	location.href = '/';
+	}
+
+*/

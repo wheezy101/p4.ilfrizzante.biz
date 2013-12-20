@@ -1,10 +1,10 @@
 
-	<!-- Five minute countdown timer -->
+	<!-- Five minute countdown timer c-->
             <h1><?=$user->user_name?>'s Clean Machine</h1>
 
             <div class="choreTimer" data-timer="5" >
 		<h2>5-Minute Timer</h2>
-	    <button class="btn btn-success start" type="submit">Start cleaning!</button>
+	    <input type="submit" class="btn btn-success start" value="Start cleaning!"</button>
 	    </div>
+		</form>
 
-<!--	    <input type='submit' value='Start Cleaning!' class="btn btn-success start">
