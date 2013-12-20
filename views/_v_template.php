@@ -27,8 +27,7 @@
 
             <a href='/users/logout'>Logout</a>
             <a href='/users/cleanplaces'>My Clean Places</a>
-            <a href='/users/cleantimer'>My Clean Timer</a>
-            <a href='/users/cleanhistory'>My Clean History</a>
+            <a href='/history/cleanhistory'>My Clean History</a>
 
         <!-- Menu options for users who are not logged in -->
         <?php else: ?>

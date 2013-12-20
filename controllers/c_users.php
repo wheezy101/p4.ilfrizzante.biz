@@ -10,6 +10,15 @@ class users_controller extends base_controller {
         echo "This is the index page";
     }
 
+    public function welcome() {
+        # Setup view
+            $this->template->content = View::instance('v_users_welcome');
+            $this->template->title   = "Welcome";
+
+        # Render template
+            echo $this->template;
+    }
+
     public function signup() {
 
         # Setup view
@@ -21,6 +30,27 @@ class users_controller extends base_controller {
 
     }
 
+
+    public function p_signup() {
+
+     # More data we want stored with the user
+    $_POST['created']  = Time::now();
+    $_POST['modified'] = Time::now();
+
+    # Encrypt the password  
+    $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);            
+
+    # Create an encrypted token via their email address and a random string
+    $_POST['token'] = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string()); 
+
+    # Insert this user into the database 
+    $user_id = DB::instance(DB_NAME)->insert("users", $_POST);
+
+    # Send them to the welcome page
+    Router::redirect('/users/welcome');
+    }
+
+    
     public function login($error = NULL) {
 
     # Set up the view
@@ -36,10 +66,9 @@ class users_controller extends base_controller {
     
     public function p_login() {
 
-    # Sanitize the user entered data to prevent any funny-business (re: SQL Injection Attacks)
+    # Sanitize to prevent SQL Injection Attacks)
     $_POST = DB::instance(DB_NAME)->sanitize($_POST);
 
-    # Hash submitted password so we can compare it against one in the db
     $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);
 
     # Search the db for this email and password
@@ -51,7 +80,7 @@ class users_controller extends base_controller {
 
     $token = DB::instance(DB_NAME)->select_field($q);
 
-# Login failed
+    # Login failed
     if(!$token) {
         # Note the addition of the parameter "error"
         Router::redirect("/users/login/error"); 
@@ -82,26 +111,6 @@ class users_controller extends base_controller {
     Router::redirect("/");
     }
 
-
-    public function p_signup() {
-
- # More data we want stored with the user
-    $_POST['created']  = Time::now();
-    $_POST['modified'] = Time::now();
-
-    # Encrypt the password  
-    $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);            
-
-    # Create an encrypted token via their email address and a random string
-    $_POST['token'] = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string()); 
-
-    # Insert this user into the database 
-    $user_id = DB::instance(DB_NAME)->insert("users", $_POST);
-
-    # For now, just confirm they've signed up - 
-    # You should eventually make a proper View for this
-    echo 'Welcome to your Clean Machine!';
-}
 
 
 
@@ -160,8 +169,6 @@ class users_controller extends base_controller {
         echo $this->template;
     }
 
-        public function p_cleantimer() {
-        }        
 
     
 } # end of the class

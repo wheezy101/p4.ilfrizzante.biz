@@ -1,41 +1,28 @@
 <?php
 class history_controller extends base_controller {
 
-    public function __construct() {
-        parent::__construct();
+    public function cleanhistory() {
 
-        # Make sure user is logged in if they want to use anything in this controller
-        if(!$this->user) {
-            die("Members only. <a href='/users/login'>Login</a>");
-        }
-    }
+    # Set up the View
+    $this->template->content = View::instance('v_history_cleanhistory');
+    $this->template->title   = "History";
 
-    public function cleanmachine() {
+    # Build the query
+    $q = "SELECT 
+        place,
+        completed
+        FROM chorehistory
+        WHERE user_id = ".$this->user->user_id;;
 
-        # Setup view
-        $this->template->content = View::instance('v_users_cleanmachine');
+    # Run the query
+    $history = DB::instance(DB_NAME)->select_rows($q);
 
-        # Render template
-        echo $this->template;
+    # Pass data to the View
+    $this->template->content->history = $history;
 
-    }
+    # Render the View
+    echo $this->template;
 
-    public function p_cleanmachine() {
+}
 
-        # Associate this chore with this user
-        $_POST['user_id']  = $this->user->user_id;
-
-        # Unix timestamp of when this post was created / modified
-        $_POST['started']  = Time::now();
-
-        # Get which chore it was
-        #$_POST('place') = cleanPlace(this.form);
-        
-        # Insert
-        # Note we didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us
-        DB::instance(DB_NAME)->insert('chorehistory', $_POST);
-
-        # Quick and dirty feedback
-        echo "Your completed chore has been recorded. <a href='/posts/add'>Complete another!</a>";
-    }
 }
