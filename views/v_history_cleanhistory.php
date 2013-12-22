@@ -3,18 +3,14 @@
 <?php foreach($history as $mini): ?>
 
 <article>
-
-    <h1><?=$mini['place']?>  posted:</h1>
-
-    <p><?=$mini['place']?></p>
-
-    <time datetime="<?=Time::display($mini['completed'],'Y-m-d G:i')?>">
-        <?=Time::display($mini['completed'])?>
-    </time>
+    
+    <br>
+    <p>
+        You cleaned for 5 minutes in the <?=$mini['place']?> on <time datetime="<?=Time::display($mini['completed'],'Y-m-d G:i')?>"><?=Time::display($mini['completed'])?></time>
+    </p>
 
 </article>
 
 <?php endforeach; ?>
-
-            
+ 
 

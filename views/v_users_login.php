@@ -1,3 +1,5 @@
+<!-- Log In View - Modified from P2 -->
+
 <form method='POST' action='/users/p_login'>
 
 <div id='login'>
@@ -11,11 +13,13 @@
 
     <?php if(isset($error)): ?>
         <div class='error'>
-            Login failed. Please double check your email and password.
+            Login failed. Please double check your email and password and try again!
         </div>
         <br>
     <?php endif; ?>
 
-    <input type='submit' value='Log in'>
+    <input type='submit' value='Log in' class="btn btn-success start"'>
+
 </div>
+
 </form>

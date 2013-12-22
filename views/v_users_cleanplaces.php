@@ -1,25 +1,39 @@
+<h1><?=$user->user_name?>'s Clean Machine</h1>
 
-            <h1><?=$user->user_name?>'s Clean Machine</h1>
+<div class="places">
 
-	<div class="places">
+    <form name="areas" method='POST' action='/users/p_cleanplaces'>
 
-                <form name="areas" method='POST' action='/users/p_cleanplaces'>
-		<h2>Places to Clean<h2>
-			<table>
-			<tr><td><input type='radio' name='place' id='kitchen' value='kitchen' onclick=''>  Kitchen</td></tr>
-			<tr><td><input type='radio' name='place' id='bathroom' value='bathroom' onclick=''>  Bathroom</td></tr>
-			<tr><td><input type='radio' name='place' id='hallway' value='hallway' onclick=''>  Hallway</td></tr>
-			<tr><td><input type='radio' name='place' id='foyer' value='foyer' onclick=''>  Foyer</td></tr>
-			<tr><td><input type='radio' name='place' id='livingroom' value='livingroom' onclick=''>  Living Room</td></tr>
-			<tr><td><input type='radio' name='place' id='bedroom' value='bedroom' onclick=''>  Bedroom</td></tr>
-			<tr><td><input type='radio' name='place' id='familyroom' value='familyroom' onclick=''>  Family Room</td></tr>
-			<tr><td><input type='radio' name='place' id='study' value='study' onclick=''>  Study</td></tr>
-			<tr><td><input type='radio' name='place' id='laundryroom' value='laundryroom' onclick=''>  Laundry Room</td></tr>
-			<tr><td><input type='radio' name='place' id='basement' value='basement' onclick=''>  Basement</td></tr>
-			<tr><td><input type='radio' name='place' id='attic' value='attic' onclick=''>  Attic</td></tr>
-			</table>
-			<br>
-			<input type='submit' value='Confirm area!'>
-			</form>
+	<!--List the places the user can choose to do their cleaning-->
 
-        </div>
+	<h2>Places to Clean<h2>
+
+	<table>
+	<tr><td><input type='radio' name='place' id='kitchen' value='kitchen'>  Kitchen</td></tr>
+	<tr><td><input type='radio' name='place' id='bathroom' value='bathroom'>  Bathroom</td></tr>
+	<tr><td><input type='radio' name='place' id='hallway' value='hallway'>  Hallway</td></tr>
+	<tr><td><input type='radio' name='place' id='foyer' value='foyer'>  Foyer</td></tr>
+	<tr><td><input type='radio' name='place' id='livingroom' value='livingroom'>  Living Room</td></tr>
+	<tr><td><input type='radio' name='place' id='bedroom' value='bedroom'>  Bedroom</td></tr>
+	<tr><td><input type='radio' name='place' id='familyroom' value='familyroom'>  Family Room</td></tr>
+	<tr><td><input type='radio' name='place' id='study' value='study'>  Study</td></tr>
+	<tr><td><input type='radio' name='place' id='laundryroom' value='laundryroom'>  Laundry Room</td></tr>
+	<tr><td><input type='radio' name='place' id='basement' value='basement'>  Basement</td></tr>
+	<tr><td><input type='radio' name='place' id='attic' value='attic'>  Attic</td></tr>
+	</table>
+
+	<?php if(isset($error)): ?>
+	    <div class='error'>
+            Please choose a place to clean! 
+	    </div>
+	    <br>
+	<?php endif; ?>
+
+    
+    <br>
+    <!--Imput choice into SQL table when button is pressed-->
+    <input type='submit' value='Confirm area!' class='btn btn-success start'>
+    
+    </form>
+
+</div>

@@ -1,13 +1,12 @@
+<h1><?=$user->user_name?>'s Clean Machine</h1>
 
-	<!-- Five minute countdown timer -->
-            <h1><?=$user->user_name?>'s Clean Machine</h1>
+    <!-- Five minute countdown timer - JS-->
+    <div class="choreTimer" data-timer="5" >
+	<h2>5-Minute Timer</h2>
+	<button class="btn btn-success start">Start</button>
+    </div>
 
-            <div class="choreTimer" data-timer="5" >
-		<h2>5-Minute Timer</h2>
-	    <button class="btn btn-success start">Start</button>
-	    </div>
-
-	<div class="places">
+    <div class="places">
 
                 <form name="areas" method='POST' action='/users/p_cleanmachine'>
 		<h2>Places to Clean<h2>

@@ -10,10 +10,17 @@ body {
 
 #menu {
     text-align: center;
+    font-size: 20px;
+    color: #99CCFF;
 }
 
+a:before {
+    content:'\00B7';
+    padding-right:5px;
+    }
+
 h1 {
-    font-size: 30px;
+    font-size: 50px;
     color: pink;
     text-align: center;
 }
@@ -27,6 +34,21 @@ h3 {
     text-align: center;
 }
 
+p {
+    color: #D0D0D0;
+    font-size: 20px;
+}
+
+p:before {
+    content:'\00B7';
+    padding-right:5px;
+
+}
+
+time {
+    color: orange;
+}
+
 table, tr, td 
 {
     text-align: justify;
@@ -36,7 +58,6 @@ table, tr, td
 tr {
     height: 25px;
 }
-
 
 .choreTimer {
     width: 500px;
@@ -50,24 +71,23 @@ tr {
 .places {
     width: 300px;
     text-align: center;
-    margin-left: 250px;
-    margin-right: 250px;
+    margin-left: 300px;
+    margin-right: 300px;
 }
 
-#login {
+#login, #signup {
     margin-left: 250px;
     margin-right: 250px;
     margin-top: 50px;
     text-align: center;
+    color: #D0D0D0;
 }
 
 .error {
-    text-color: red;
+    color: #FF0066;
+    background-color: white;
+    text-align: center;
+    font-size: 40px;
+    font-style: italic;
 }
 
-.clear {
-    clear: both;
-}
-.error {
-    color: #FF0000;
-}

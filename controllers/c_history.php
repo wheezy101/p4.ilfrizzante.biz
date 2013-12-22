@@ -7,7 +7,7 @@ class history_controller extends base_controller {
     $this->template->content = View::instance('v_history_cleanhistory');
     $this->template->title   = "History";
 
-    # Build the query
+    # Build the query to get the user's completed chores and dates completed
     $q = "SELECT 
         place,
         completed
@@ -23,6 +23,6 @@ class history_controller extends base_controller {
     # Render the View
     echo $this->template;
 
-}
+    }
 
 }
