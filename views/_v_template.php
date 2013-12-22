@@ -10,6 +10,8 @@
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/css/TimeCircles.css" >
 		<link rel="stylesheet" href="/css/cleanmachine.css" > 
+		<script type="text/javascript" src="/js/TimeCircles.js"></script>
+		<script type="text/javascript" src="/js/cleanmachine.js"></script>
 					
 		<!-- Controller Specific JS/CSS -->
 		<?php if(isset($client_files_head)) echo $client_files_head; ?>
