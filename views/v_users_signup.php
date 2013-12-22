@@ -20,6 +20,7 @@
     <?php if(isset($error)): ?>
         <div class='error'>
             Don't leave any fields blank! Try again!
+            If you didn't leave fields blank, you may have used an email or user name that already exists.
         </div>
         <br>
     <?php endif; ?>

@@ -6,7 +6,7 @@
 
 	<!--List the places the user can choose to do their cleaning-->
 
-	<h2>Places to Clean<h2>
+	<h2>Choose a Place to Clean<h2>
 
 	<table>
 	<tr><td><input type='radio' name='place' id='kitchen' value='kitchen'>  Kitchen</td></tr>
@@ -32,7 +32,7 @@
     
     <br>
     <!--Imput choice into SQL table when button is pressed-->
-    <input type='submit' value='Confirm area!' class='btn btn-success start'>
+    <input type='submit' value='Confirm place!' class='btn btn-success start'>
     
     </form>
 

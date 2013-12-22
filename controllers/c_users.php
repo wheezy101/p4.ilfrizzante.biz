@@ -23,15 +23,15 @@ class users_controller extends base_controller {
     }
 
     # From P2 code
-    public function signup($error=NULL) {
+    public function signup($error=NULL, $error2=NULL) {
 
         # Setup view
         $this->template->content = View::instance('v_users_signup');
         $this->template->title   = "Sign Up";
-            
+        
         # Pass data to the view
         $this->template->content->error = $error;        
-
+ 
         # Render template
         echo $this->template;
 

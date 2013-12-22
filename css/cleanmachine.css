@@ -30,11 +30,15 @@ h2 {
     font-size: 20px;
     text-align: center;
 }
+
 h3 {
     text-align: center;
+    font-size: 17px;
+    text-align: center;
+    color: #9ACD32;
 }
 
-p {
+p, article {
     color: #D0D0D0;
     font-size: 20px;
 }
@@ -46,13 +50,14 @@ p:before {
 }
 
 time {
-    color: orange;
+    color: #9ACD32;
 }
 
 table, tr, td 
 {
     text-align: justify;
     font-size: 20px;
+    margin-left: 100px;
 }
 
 tr {
@@ -71,8 +76,8 @@ tr {
 .places {
     width: 300px;
     text-align: center;
-    margin-left: 300px;
-    margin-right: 300px;
+    margin-left: 350px;
+    margin-right: 350px;
 }
 
 #login, #signup {
@@ -87,7 +92,7 @@ tr {
     color: #FF0066;
     background-color: white;
     text-align: center;
-    font-size: 40px;
+    font-size: 20px;
     font-style: italic;
 }
 
