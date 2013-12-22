@@ -40,25 +40,34 @@ class users_controller extends base_controller {
     # Modified P2 code
     public function p_signup() {        
         
-        # Make sure there are no dupe usernames or emails
         $dupeemail = "SELECT email 
             FROM users 
             WHERE email = '".$_POST['email']."'" ;
             
-        $alert1 = DB::instance(DB_NAME)->select_field($dupeemail);
+        $alert = DB::instance(DB_NAME)->select_field($dupeemail);
         
-        $dupeuser = "SELECT user_name 
-            FROM users 
-            WHERE user_name = '".$_POST['user_name']."'" ;
-            
-        $alert2 = DB::instance(DB_NAME)->select_field($dupeuser);
-                
-        if($alert1!=FALSE || $alert2!=FALSE) {
-        Router::redirect('/users/signup/error');             
+        echo $alert;
+        
+         
+        /*if (mysql_num_rows($alertemail)=FALSE){
+        echo  "help!";
         }
+                
         
-        #If username and emails are unique, continue on
-        else {
+         *#if(mysql_num_rows($alertemail) > 0) {
+        #echo'User already exists';
+        #exit;
+        }
+
+        #$new = mysql_numrows($alertemail);
+
+        #echo $alertemail;
+        
+        if(mysql_num_rows($alertemail) > 0) {
+        echo'User already exists';
+        exit;
+        }
+  
         # No user information - show error
         if(empty($_POST['user_name'])) {
         Router::redirect('/users/signup/error'); 
@@ -88,8 +97,8 @@ class users_controller extends base_controller {
 
         # Send them to the welcome page
         Router::redirect('/users/welcome');
-        }
-        }
+    
+        }*/
     }
     
     # From P2 code

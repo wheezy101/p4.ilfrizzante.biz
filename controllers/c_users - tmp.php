@@ -40,24 +40,16 @@ class users_controller extends base_controller {
     # Modified P2 code
     public function p_signup() {        
         
-        # Make sure there are no dupe usernames or emails
         $dupeemail = "SELECT email 
             FROM users 
             WHERE email = '".$_POST['email']."'" ;
             
-        $alert1 = DB::instance(DB_NAME)->select_field($dupeemail);
+        $alert = DB::instance(DB_NAME)->select_field($dupeemail);
         
-        $dupeuser = "SELECT user_name 
-            FROM users 
-            WHERE user_name = '".$_POST['user_name']."'" ;
-            
-        $alert2 = DB::instance(DB_NAME)->select_field($dupeuser);
-                
-        if($alert1!=FALSE || $alert2!=FALSE) {
+        if($alert!=FALSE) {
         Router::redirect('/users/signup/error');             
         }
         
-        #If username and emails are unique, continue on
         else {
         # No user information - show error
         if(empty($_POST['user_name'])) {
